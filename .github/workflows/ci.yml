@@ -2,18 +2,29 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+          node-version: '18'
+
+      - name: Create Data Directory and File
+        run: |
+          mkdir -p data
+          echo "[]" > data/events.json  # Ensure file exists
+
+      - name: Run Test Script
+        run: node testScript.js
