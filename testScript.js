@@ -1,4 +1,4 @@
-const { addEvent, getAllEvents, getUpcomingEvents, getEventsByCategory, setReminder } = require("/home/usmanali/Documents/SCD LAB/Lab7/EVENT-PLANNER/src/events.js");
+const { addEvent, getAllEvents, getUpcomingEvents, getEventsByCategory, setReminder } = require("./src/events");
 const fs = require("fs");
 
 const DATA_FILE = "./data/events.json";
