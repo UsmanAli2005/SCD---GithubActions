@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const DATA_FILE = "/home/usmanali/Documents/SCD LAB/Lab7/EVENT-PLANNER/data/events.json";
+const DATA_FILE = "./data/events.json";
 
 // Ensure the file exists before reading
 if (!fs.existsSync(DATA_FILE)) {
@@ -30,4 +30,15 @@ const getAllEvents = () => loadEvents();
 const getUpcomingEvents = () => loadEvents().sort((a, b) => new Date(a.date) - new Date(b.date));
 
 const getEventsByCategory = (category) => 
-  loadEvents().filter(event => event.category.toLowerCase() === category
+  loadEvents().filter(event => event.category.toLowerCase() === category.toLowerCase());
+
+const setReminder = (id, reminder) => {
+  const events = loadEvents();
+  const event = events.find(e => e.id === id);
+  if (!event) return null;
+  event.reminder = reminder;
+  saveEvents(events);
+  return event;
+};
+
+module.exports = { addEvent, getAllEvents, getUpcomingEvents, getEventsByCategory, setReminder };
