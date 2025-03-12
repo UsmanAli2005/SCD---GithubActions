@@ -6,7 +6,7 @@ fs.writeFileSync(DATA_FILE, JSON.stringify([]));
 
 console.log("Running Tests...\n");
 
-const event1 = addEvent("Team Meeting", "Monthly team sync-up", "2025-03-15", "Meeting", true);
+const event1 = addEvent("Team Meeting", "Monthly team sync-up", "2025-03-15", "Meeting", "1740192000000", true);
 console.log("Event added:", event1);
 
 const allEvents = getAllEvents();

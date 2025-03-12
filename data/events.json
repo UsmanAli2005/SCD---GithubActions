@@ -1,19 +1,20 @@
 [
-    {
-      "id": 1,
-      "name": "Team Meeting",
-      "description": "Monthly team sync-up",
-      "date": "2025-03-15",
-      "category": "Meeting",
-      "reminder": true
-    },
-    {
-      "id": 2,
-      "name": "Doctor Appointment",
-      "description": "Annual health checkup",
-      "date": "2025-03-20",
-      "category": "Appointment",
-      "reminder": false
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Team Meeting",
+    "description": "Monthly team sync-up",
+    "date": "2025-03-15",
+    "category": "Meeting",
+    "time": 1710192000000, 
+    "reminder": true
+  },
+  {
+    "id": 2,
+    "name": "Doctor Appointment",
+    "description": "Annual health checkup",
+    "date": "2025-03-20",
+    "category": "Appointment",
+    "time":1810192000000,
+    "reminder": false
+  }
+]

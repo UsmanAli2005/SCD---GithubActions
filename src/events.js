@@ -11,7 +11,7 @@ const loadEvents = () => {
   try {
     return JSON.parse(fs.readFileSync(DATA_FILE, "utf-8"));
   } catch (error) {
-    return []; // Return empty array if file is corrupt
+    return []; 
   }
 };
 
