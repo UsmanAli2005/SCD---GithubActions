@@ -2,23 +2,21 @@ const { addEvent, getAllEvents, getUpcomingEvents, getEventsByCategory, setRemin
 const fs = require("fs");
 
 const DATA_FILE = "./data/events.json";
-fs.writeFileSync(DATA_FILE, JSON.stringify([])); 
+fs.writeFileSync(DATA_FILE, JSON.stringify([]));
 
-console.log("Running Tests...\n");
-
-const event1 = addEvent("Team Meeting", "Monthly team sync-up", "2025-03-15", "Meeting", "1740192000000", true);
-console.log("Event added:", event1);
+const event2 = addEvent("Project Deadline", "Final submission for project", "2025-04-01", "Work", "17409504007000", true);
+console.log("Event added:", event2);
 
 const allEvents = getAllEvents();
-console.log("All Events shown:", allEvents);
+console.log("All Events:", allEvents);
 
-const sortedEvents = getUpcomingEvents();
-console.log("Upcoming Events:", sortedEvents);
+const upcoming = getUpcomingEvents();
+console.log("Upcoming Events:", upcoming);
 
-const meetings = getEventsByCategory("Meeting");
-console.log("Meetings:", meetings);
+const categoryEvents = getEventsByCategory("Meeting");
+console.log("Meetings:", categoryEvents);
 
-const updatedEvent = setReminder(1, false);
-console.log("Reminder updated:", updatedEvent || "Event not found");
+const updatedReminder = setReminder(1, false);
+console.log("Reminder updated:", updatedReminder || "Event not found");
 
 console.log("\nAll Tests Completed!");

@@ -2,7 +2,6 @@ const fs = require("fs");
 
 const DATA_FILE = "./data/events.json";
 
-// Ensure the file exists before reading
 if (!fs.existsSync(DATA_FILE)) {
   fs.writeFileSync(DATA_FILE, JSON.stringify([]));
 }
